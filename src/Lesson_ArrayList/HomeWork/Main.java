@@ -47,9 +47,9 @@ public class Main {
                         if (c == 0) break;
                         switch (c) {
                             case 1:
-                                System.out.print("Enter Library Name: ");
+                                System.out.print("Library Name: ");
                                 String lname = sc.nextLine();
-                                System.out.print("Enter Library Address: ");
+                                System.out.print("Library Address: ");
                                 String laddr = sc.nextLine();
                                 Library lib = new Library(lname, laddr);
                                 libraryService.saveLibrary(Collections.singletonList(lib));
@@ -59,7 +59,7 @@ public class Main {
                                 System.out.println(libraryService.getAllLibraries());
                                 break;
                             case 3:
-                                System.out.print("Enter Library ID to update: ");
+                                System.out.print("Library ID to update: ");
                                 Long lid = sc.nextLong();
                                 sc.nextLine();
                                 System.out.print("New Name: ");
@@ -70,7 +70,7 @@ public class Main {
                                 libraryService.updateLibrary(lid, newLib);
                                 break;
                             case 4:
-                                System.out.print("Enter Library ID to delete: ");
+                                System.out.print("Library ID to delete: ");
                                 Long dlid = sc.nextLong();
                                 System.out.println(libraryService.deleteLibrary(dlid));
                                 break;
@@ -109,7 +109,7 @@ public class Main {
                                 System.out.println(readerService.getAllReaders());
                                 break;
                             case 3:
-                                System.out.print("Enter Reader ID to update: ");
+                                System.out.print("Reader ID to update: ");
                                 Long rid = sc.nextLong();
                                 sc.nextLine();
                                 System.out.print("New Full Name: ");
