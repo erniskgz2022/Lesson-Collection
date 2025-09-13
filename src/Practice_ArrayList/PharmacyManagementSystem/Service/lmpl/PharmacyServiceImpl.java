@@ -6,7 +6,7 @@ import Practice_ArrayList.PharmacyManagementSystem.models.Pharmacy;
 
 import java.util.List;
 
-public class PharmacyServicelmpl implements PharmacyService {
+public class PharmacyServiceImpl implements PharmacyService {
 
     @Override
     public void savePharmacy(Pharmacy pharmacy) {

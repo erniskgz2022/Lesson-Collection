@@ -1,4 +1,4 @@
-package Practice_ArrayList.Task2;
+package Practice_ArrayList.TaskAutoSalon;
 
 public class Main {
     public static void main(String[] args) {

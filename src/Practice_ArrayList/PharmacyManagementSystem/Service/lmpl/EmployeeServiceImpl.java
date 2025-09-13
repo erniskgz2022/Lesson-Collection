@@ -9,7 +9,7 @@ import java.util.List;
 
 
 
-public class EmployeeServicelmpl implements EmployeeService {
+public class EmployeeServiceImpl implements EmployeeService {
 
 
     @Override

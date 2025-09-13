@@ -2,9 +2,12 @@ package Practice_ArrayList.PharmacyManagementSystem;
 
 import Practice_ArrayList.PharmacyManagementSystem.Enums.Gender;
 import Practice_ArrayList.PharmacyManagementSystem.Enums.Position;
-import Practice_ArrayList.PharmacyManagementSystem.Service.lmpl.EmployeeServicelmpl;
-import Practice_ArrayList.PharmacyManagementSystem.Service.lmpl.MedicineServicelpml;
-import Practice_ArrayList.PharmacyManagementSystem.Service.lmpl.PharmacyServicelmpl;
+import Practice_ArrayList.PharmacyManagementSystem.Service.EmployeeService;
+import Practice_ArrayList.PharmacyManagementSystem.Service.MedicineService;
+import Practice_ArrayList.PharmacyManagementSystem.Service.PharmacyService;
+import Practice_ArrayList.PharmacyManagementSystem.Service.lmpl.EmployeeServiceImpl;
+import Practice_ArrayList.PharmacyManagementSystem.Service.lmpl.MedicineServiceImpl;
+import Practice_ArrayList.PharmacyManagementSystem.Service.lmpl.PharmacyServiceImpl;
 import Practice_ArrayList.PharmacyManagementSystem.models.Employee;
 import Practice_ArrayList.PharmacyManagementSystem.models.Medicine;
 import Practice_ArrayList.PharmacyManagementSystem.models.Pharmacy;
@@ -17,9 +20,9 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        EmployeeServicelmpl employeeService = new EmployeeServicelmpl();
-        MedicineServicelpml medicineService = new MedicineServicelpml();
-        PharmacyServicelmpl pharmacyService = new PharmacyServicelmpl();
+        EmployeeService employeeService = new EmployeeServiceImpl();
+        MedicineService medicineService = new MedicineServiceImpl();
+        PharmacyService pharmacyService = new PharmacyServiceImpl();
 
         while (true) {
             System.out.println("\n===== Main Menu =====");
@@ -79,12 +82,14 @@ public class Main {
                                 String newAddr = scanner.nextLine();
                                 Pharmacy newPh = new Pharmacy(newName, newAddr);
                                 pharmacyService.updatePharmacyByName(updId, newPh);
+                                System.out.println("Successfully update!!");
                                 break;
 
                             case 5:
                                 System.out.print("ID: ");
                                 Long delId = scanner.nextLong();
                                 pharmacyService.deletePharmacyById(delId);
+                                System.out.println("Successfully deled!!!");
                                 break;
                         }
                     }
@@ -124,8 +129,9 @@ public class Main {
                                 Gender gender = Gender.valueOf(scanner.nextLine().toUpperCase());
                                 System.out.print("Position (ADMIN/PHARMACIST/TELLER): ");
                                 Position pos = Position.valueOf(scanner.nextLine().toUpperCase());
-
                                 Employee emp = new Employee(fullName, email, phone, exp, pos, gender);
+                                employeeService.saveEmployee(emp);
+                                System.out.println("Successfully Emp");
 
                                 Pharmacy ph = pharmacyService.getPharmacyById(phIdEmp);
                                 if (ph != null) {
@@ -183,12 +189,14 @@ public class Main {
 
                                 Employee newEmp = new Employee(nFull, nEmail, nPhone, nExp, nPos, nGender);
                                 employeeService.updateEmployeeName(upEmpId, newEmp);
+                                System.out.println("Successfully Update!!!");
                                 break;
 
                             case 5:
                                 System.out.print("Employee ID: ");
                                 Long delEmpId = scanner.nextLong();
                                 employeeService.deleteEmployeeById(delEmpId);
+                                System.out.println("Successfully deled!!!1");
                                 break;
                         }
                     }

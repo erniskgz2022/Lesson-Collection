@@ -7,7 +7,7 @@ import Practice_ArrayList.PharmacyManagementSystem.models.Pharmacy;
 
 import java.util.List;
 
-public class MedicineServicelpml implements MedicineService {
+public class MedicineServiceImpl implements MedicineService {
     @Override
     public void saveMedicineByPharmacyId(Long pharmacyId, Medicine medicine) {
         for (Pharmacy pharmacy: Database.pharmacies) {
