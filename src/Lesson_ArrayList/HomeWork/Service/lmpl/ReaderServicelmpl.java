@@ -22,7 +22,7 @@ public class ReaderServicelmpl implements ReaderService {
     public Reader getReaderById(Long id) {
         try {
             for (Reader reader : LDatabase.readers) {
-                if (reader.getId() == id){
+                if (reader.getId().equals(id)){
                     return reader;
                 }
             }

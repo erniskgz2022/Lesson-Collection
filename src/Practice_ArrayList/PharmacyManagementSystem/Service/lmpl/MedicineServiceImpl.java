@@ -11,7 +11,7 @@ public class MedicineServiceImpl implements MedicineService {
     @Override
     public void saveMedicineByPharmacyId(Long pharmacyId, Medicine medicine) {
         for (Pharmacy pharmacy: Database.pharmacies) {
-            if (pharmacy.getId() == pharmacyId){
+            if (pharmacy.getId().equals(pharmacyId)){
                 pharmacy.getMedicines().add(medicine);
             }
         }
